@@ -142,9 +142,6 @@ public class MainActivity extends AppCompatActivity {
         if (telepon.isEmpty()) {
             etTelepon.setError("Nomor Telepon belum diisi");
             valid = false;
-        }else if (telepon.length()>12) {
-            etTelepon.setError("Nomor Telepon maksimal 12 digit");
-            valid = false;
         }else {
             etTelepon.setError(null);
         }

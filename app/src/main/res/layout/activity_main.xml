@@ -1,7 +1,7 @@
 <ScrollView
-    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
 
 <LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
@@ -16,16 +16,16 @@
     tools:context="id.sch.smktelkom_mlg.tugas1.xirpl5020.samudrashop.MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:id="@+id/imageView"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/samudraolshop"/>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView"
@@ -35,18 +35,12 @@
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:text="\nSilahkan lengkapi data anda \nuntuk membeli barang\n"
-            android:textColor="#000000"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="15dp"/>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <EditText
-                android:id="@+id/editTextNama"
-                android:layout_width="225dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|top"/>
 
             <TextView
                 android:id="@+id/textView2"
@@ -54,7 +48,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
                 android:text="Nama"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
+
+            <EditText
+                android:id="@+id/editTextNama"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:textColor="#4052b5"
+                />
 
         </FrameLayout>
 
@@ -68,15 +70,17 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
                 android:text="Telepon"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
             <EditText
                 android:id="@+id/editTextTelepon"
                 android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|top"
+                android:drawableTint="#4052b5"
                 android:ems="10"
-                android:inputType="numberSigned"/>
+                android:inputType="numberSigned"
+                android:textColor="#4052b5"/>
 
         </FrameLayout>
 
@@ -90,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
                 android:text="Provinsi"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
             <Spinner
                 android:id="@+id/spinnerProvinsi"
@@ -119,7 +123,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
                 android:text="Kota / Kabupaten"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
         </FrameLayout>
 
@@ -134,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center_vertical"
                 android:text="Kode Pos"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
             <EditText
                 android:id="@+id/editTextKode"
@@ -143,7 +147,7 @@
                 android:layout_gravity="right|top"
                 android:ems="10"
                 android:inputType="numberSigned"
-                />
+                android:textColor="#4052b5"/>
 
         </FrameLayout>
 
@@ -156,9 +160,9 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <CheckBox
                         android:id="@+id/checkBoxXiaomi"
@@ -166,7 +170,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="125dp"
                         android:checked="false"
-                        android:text="Xiaomi Yi"/>
+                        android:text="Xiaomi Yi"
+                        android:textColor="#4052b5"/>
 
                     <CheckBox
                         android:id="@+id/checkBoxHero3"
@@ -175,7 +180,7 @@
                         android:layout_marginLeft="125dp"
                         android:checked="false"
                         android:text="GoPro Hero3"
-                        />
+                        android:textColor="#4052b5"/>
 
                     <CheckBox
                         android:id="@+id/checkBoxHero4"
@@ -183,7 +188,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="125dp"
                         android:checked="false"
-                        android:text="GoPro Hero4"/>
+                        android:text="GoPro Hero4"
+                        android:textColor="#4052b5"/>
 
                 </LinearLayout>
             </FrameLayout>
@@ -194,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|top"
                 android:text="Pilih Barang"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
         </FrameLayout>
 
@@ -208,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|top"
                 android:text="Jasa Pengiriman"
-                android:textColor="#000000"/>
+                android:textColor="#4052b5"/>
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -221,7 +227,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="125dp"
                     android:checked="false"
-                    android:text="JNE (REG)"/>
+                    android:text="JNE (REG)"
+                    android:textColor="#4052b5"/>
 
                 <RadioButton
                     android:id="@+id/radioButtonYes"
@@ -230,7 +237,7 @@
                     android:layout_marginLeft="125dp"
                     android:checked="false"
                     android:text="JNE (YES)"
-                    />
+                    android:textColor="#4052b5"/>
 
                 <Button
                     android:id="@+id/buttonPesan"
