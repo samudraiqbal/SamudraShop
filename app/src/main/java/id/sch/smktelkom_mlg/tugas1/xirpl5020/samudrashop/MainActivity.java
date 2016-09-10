@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,9 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etNama, etTelepon, etKode;
     Button btPesan;
-    TextView tvHasil, tvData;
+    TextView tvHasil, tvData, tvrb, tvcb;
     Spinner spProvinsi, spKota;
     CheckBox cbXY, cbH3, cbH4;
+    RadioButton rbReg, rbYes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,12 @@ public class MainActivity extends AppCompatActivity {
         cbXY = (CheckBox) findViewById(R.id.checkBoxXiaomi);
         cbH3 = (CheckBox) findViewById(R.id.checkBoxHero3);
         cbH4 = (CheckBox) findViewById(R.id.checkBoxHero4);
-
+        rbReg = (RadioButton) findViewById(R.id.radioButtonReg);
+        rbYes = (RadioButton) findViewById(R.id.radioButtonYes);
         tvData = (TextView) findViewById(R.id.textViewData);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
+        tvcb = (TextView) findViewById(R.id.textViewcb);
+        tvrb = (TextView) findViewById(R.id.textViewrb);
         spProvinsi = (Spinner) findViewById(R.id.spinnerProvinsi);
         spKota = (Spinner) findViewById(R.id.spinnerKota);
         final String[][] arKota = {
@@ -83,7 +88,31 @@ public class MainActivity extends AppCompatActivity {
             if(cbXY.isChecked()) hasil+=cbXY.getText()+"\n";
             if(cbH3.isChecked()) hasil+=cbH3.getText()+"\n";
             if(cbH4.isChecked()) hasil+=cbH4.getText()+"\n";
-            if(hasil.length()==startlen) hasil+="Anda belum memilih barang";
+            if(hasil.length()==startlen)
+            {
+                tvcb.setText(hasil+="Anda belum memilih barang\n");
+            }
+            else
+            {
+                tvcb.setText("\nAnda akan membeli :"+hasil);
+            }
+            String hasil2 = null;
+            if(rbReg.isChecked())
+            {
+                hasil2 = rbReg.getText().toString();
+            }
+            else if(rbYes.isChecked())
+            {
+                hasil2 = rbYes.getText().toString();
+            }
+            if (hasil2 == null)
+            {
+                tvrb.setText("Silahkan pilih Jasa Pengiriman");
+            }
+            else
+            {
+                tvrb.setText("Menggunakan Jasa Pengiriman : "+hasil2);
+            }
             String nama = etNama.getText().toString();
             String telepon = etTelepon.getText().toString();
             String kode = etKode.getText().toString();
@@ -91,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             String kota = spKota.getSelectedItem().toString();
 
             tvData.setText("\nData Pembeli");
-            tvHasil.setText("Nama : " + nama + "\nTelepon : " + telepon + "\nProvinsi " + provinsi+", "+kota+"\nKode Pos : "+kode+"\n\nAnda akan membeli :"+hasil);
+            tvHasil.setText("Nama : " + nama + "\nTelepon : " + telepon + "\nProvinsi " + provinsi+", "+kota+"\nKode Pos : "+kode);
         }
     }
 
