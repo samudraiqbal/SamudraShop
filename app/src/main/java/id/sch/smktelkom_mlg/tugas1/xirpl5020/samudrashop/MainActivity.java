@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button btPesan;
     TextView tvHasil, tvData;
     Spinner spProvinsi, spKota;
+    CheckBox cbXY, cbH3, cbH4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         etTelepon = (EditText) findViewById(R.id.editTextTelepon);
         etKode = (EditText) findViewById(R.id.editTextKode);
         btPesan = (Button) findViewById(R.id.buttonPesan);
+        cbXY = (CheckBox) findViewById(R.id.checkBoxXiaomi);
+        cbH3 = (CheckBox) findViewById(R.id.checkBoxHero3);
+        cbH4 = (CheckBox) findViewById(R.id.checkBoxHero4);
+
         tvData = (TextView) findViewById(R.id.textViewData);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
         spProvinsi = (Spinner) findViewById(R.id.spinnerProvinsi);
@@ -72,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void doHasil() {
         if (isValid()) {
+            String hasil="\n";
+            int startlen = hasil.length();
+            if(cbXY.isChecked()) hasil+=cbXY.getText()+"\n";
+            if(cbH3.isChecked()) hasil+=cbH3.getText()+"\n";
+            if(cbH4.isChecked()) hasil+=cbH4.getText()+"\n";
+            if(hasil.length()==startlen) hasil+="Anda belum memilih barang";
             String nama = etNama.getText().toString();
             String telepon = etTelepon.getText().toString();
             String kode = etKode.getText().toString();
@@ -79,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
             String kota = spKota.getSelectedItem().toString();
 
             tvData.setText("\nData Pembeli");
-            tvHasil.setText("Nama : " + nama + "\nTelepon : " + telepon + "\nProvinsi " + provinsi+", "+kota);
+            tvHasil.setText("Nama : " + nama + "\nTelepon : " + telepon + "\nProvinsi " + provinsi+", "+kota+"\nKode Pos : "+kode+"\n\nAnda akan membeli :"+hasil);
         }
     }
 
@@ -101,7 +113,10 @@ public class MainActivity extends AppCompatActivity {
         if (telepon.isEmpty()) {
             etTelepon.setError("Nomor Telepon belum diisi");
             valid = false;
-        } else {
+        }else if (telepon.length()>12) {
+            etTelepon.setError("Nomor Telepon maksimal 12 digit");
+            valid = false;
+        }else {
             etTelepon.setError(null);
         }
 
