@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|top"
                 android:entries="@array/provinsi"
-                android:spinnerMode="dialog"/>
+                android:spinnerMode="dropdown"/>
 
         </FrameLayout>
 
@@ -110,7 +110,8 @@
                 android:id="@+id/spinnerKota"
                 android:layout_width="125dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right|top"/>
+                android:layout_gravity="right|top"
+                android:spinnerMode="dialog"/>
 
             <TextView
                 android:id="@+id/textView5"
@@ -141,7 +142,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|top"
                 android:ems="10"
-                android:inputType="textPostalAddress"/>
+                android:inputType="numberSigned"
+                />
 
         </FrameLayout>
 
