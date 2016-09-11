@@ -8,7 +8,7 @@
 Saya membuat sebuah aplikasi sederhana yaitu form isian untuk membeli barang di Samudra Online Shop. Form ini berisikan Nama, No Telepon, Asal Pronvisi, Asal Kota / Kabupaten, Kode Pos, Barang yang tersedia, dan Jasa Pengiriman.Form ini dibuat agar bisa menghasilkan output sesuai dengan apa yang diinputkan user. Di form ini user diminta menginputkan Nama dan Nomor Telepon, jika user tidak menginputkan Nama maka akan ada peringatan agar user menginputkan nama, begitu pula dengan Nomor Telepon. Jika user tidak menginputkan Nomor Telepon maka akan ada peringatan. Setelah user menginputkan data dengan benar maka user akan klik Button "PESAN" dan data user akan muncul dibawah Button PESAN sesuai apa yang diinputkannya tadi.
 <br>
 ##Link APK
-https://drive.google.com/uc?id=0B6S7h919Z6i-VnpFWHBXRnk2REU
+https://docs.google.com/open?id=0BwPpRMGW8R5ANGhEQ0JaeFNIaDA
 <br>
 ##Screenshot Aplikasi Samudra Online Shop
 ![1](https://cloud.githubusercontent.com/assets/21413338/18414316/358b2cde-77ed-11e6-857b-473cc74058d8.jpeg)
