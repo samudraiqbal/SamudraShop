@@ -1,6 +1,7 @@
 <h4>Nama : Muhamad Iqbal Samudra
 <br>Kelas : XI RPL 5
 <br>No Urut : 20
+<br>NIS : 4762/1481.070
 <br>Sekolah : SMK Telkom Malang</h4>
 
 ##Penjelasan Aplikasi :
